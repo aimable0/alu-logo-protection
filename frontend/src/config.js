@@ -1,7 +1,7 @@
 // config file
 
-export const REGISTRY_ADDRESS = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
-export const TOKEN_ADDRESS = "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0";
+export const REGISTRY_ADDRESS = "0x258Ca10734fa6A203B44E9202BC0b02c3f2f76Fe";
+export const TOKEN_ADDRESS = "0x83196fF6820E94e66f706a49B5E36808575b930C";
 
 // ABI array from ALUAssetRegistry.json
 export const REGISTRY_ABI = [

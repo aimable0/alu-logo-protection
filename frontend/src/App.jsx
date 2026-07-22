@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { ethers } from "ethers";
 import { BrowserProvider, JsonRpcProvider, Contract, formatUnits, parseUnits } from 'ethers';
 import { REGISTRY_ADDRESS, TOKEN_ADDRESS, REGISTRY_ABI, TOKEN_ABI } from './config';
 
@@ -43,7 +44,7 @@ function App() {
       return;
     }
     try {
-      const provider = new BrowserProvider(window.ethereum);
+      const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
       const address = await signer.getAddress();
 
@@ -130,7 +131,7 @@ function App() {
     if (!verifyInputHash) return;
     setVerifyStatus("loading"); setVerifyMetadata(null);
     try {
-      const readOnlyProvider = new JsonRpcProvider("http://127.0.0.1:8545");
+      const readOnlyProvider = new ethers.JsonRpcProvider("https://eth-sepolia.g.alchemy.com/v2/ABicODmkpAY2fKQL0awq7");
       const readOnlyRegistry = new Contract(REGISTRY_ADDRESS, REGISTRY_ABI, readOnlyProvider);
       const OFFICIAL_LOGO_ID = 1;
 
